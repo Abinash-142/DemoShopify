@@ -1,0 +1,14 @@
+{
+  "layout": "theme",
+  "wrapper": "div#404-template.custom-class",
+  "sections": {
+    "template": {
+      "type": "template-404",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "template"
+  ]
+}

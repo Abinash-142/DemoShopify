@@ -1,0 +1,14 @@
+<p class="mt-3">
+{% if pagination.previous %}
+  <a href="{{ pagination.previous.url }}" class="border border-gray-600 hover:bg-gray-600 hover:text-white px-8 py-3 mx-1 rounded-sm font-medium ">Previous</a>
+{% endif %}
+{% for  part in pagination.parts %}
+    <a href="{{ part.url }}" class="border border-gray-600 hover:bg-gray-600 hover:text-white px-8 py-3 mx-1 rounded-sm font-medium">{{part.title}}</a>
+{% endfor %}
+
+
+{% if pagination.next %}
+    <a href="{{ pagination.next.url }}" class="border border-gray-600 hover:bg-gray-600 hover:text-white px-8 py-3 mx-1 rounded-sm font-medium">Next</a>
+{% endif %}
+{% comment %} {{pagination.parts}} {% endcomment %}
+</p>

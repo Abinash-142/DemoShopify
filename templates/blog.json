@@ -1,0 +1,13 @@
+{
+  "layout": "theme",
+  "sections": {
+    "template": {
+      "type": "template-blog",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "template"
+  ]
+}

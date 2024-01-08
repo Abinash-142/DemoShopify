@@ -1,0 +1,62 @@
+{% for block in section.blocks %}
+  {% case block.type %}
+    {% when 'article_title' %}
+      <div class="article-title" {{ block.shopify_attributes }}>
+       <h1>{{ article.title }}</h1>
+      </div>
+  {% endcase %}
+{% endfor %}
+
+<h1>{{ article.title }}</h1>
+{% if section.settings.show-author %}
+    <small>{{ article.author}}</small>
+{% endif  %}
+<img src="{{ article.image | img_url:'large'}}" >
+<h1>{{ article.content }}</h1>
+{% if section.settings.show-date %}
+    <time>{{ article.created_at | date: "%Y-%m-%d" }}</time>
+{% endif  %}
+    
+{% schema %}
+{
+    "name":"Template Blog",
+    "tag": "section",
+    "settings": [   
+        {
+            "type": "checkbox",
+            "id": "show-author",
+            "label": "Show author?",
+            "info":"Would you like to display author name?s" 
+        },
+        {
+            "type": "checkbox",
+            "id": "show-date",
+            "label": "Show date?",
+            "info":"Would you like to display published date?s" 
+        }
+    ],
+    "blocks": [
+    {
+       "name": "Title",
+       "type": "article_title",
+       "limit": 1
+    },
+    {
+       "name": "Published Date",
+       "type": "author_date",
+       "limit": 1
+    },
+    {
+       "name": "Feature Image",
+       "type": "feature_image",
+       "limit": 1
+    },
+    {
+       "name": "Content",
+       "type": "blog_content",
+       "limit": 1
+    }   
+   ]
+
+}
+{% endschema %}
