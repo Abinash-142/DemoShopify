@@ -4,16 +4,9 @@
       "type": "template-customer-login",
       "settings": {
       }
-    },
-    "contact_form_d6gx7D": {
-      "type": "contact-form",
-      "settings": {
-        "title": ""
-      }
     }
   },
   "order": [
-    "template",
-    "contact_form_d6gx7D"
+    "template"
   ]
 }
