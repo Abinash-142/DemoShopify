@@ -83,6 +83,14 @@
                     <a x-on:click="loginForm = true; pwRecoverForm = false" href="#" class="underline text-gray-500 hover:text-gray-900">Back to login</a>
                 </div>
             {% endform %}
+
+            {% if shop.checkout.guest_login %}
+                {% form 'guest_login' %}
+                    <div class="submit">
+                    <input type="submit" value="Continue as guest">
+                    </div>
+                {% endform %}
+                {% endif %}
         </div>
     </div>
 </div>
