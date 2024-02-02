@@ -84,6 +84,7 @@
                 </div>
             {% endform %}
 
+            {% echo shop.checkout %}
             {% if shop.checkout.guest_login %}
                 {% form 'guest_login' %}
                     <div class="submit">
