@@ -1,4 +1,4 @@
-{% paginate blog.articles by {{section.settings.total_blogs}} %}
+{% paginate blog.articles by section.settings.total_blogs %}
     {% for article in blog.articles %}
         <div>
             {% if article.image %}
@@ -36,4 +36,13 @@
     ]
 
 }
-{% endschema %}
+{% endschema %}{%- comment -%}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% paginate blog.articles by {{section.settings.total_blogs}} %}"
+  to: "{% paginate blog.articles by section.settings.total_blogs %}"
+  position: 0..60
+{%- endcomment -%}
